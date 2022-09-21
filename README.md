@@ -1,4 +1,4 @@
-# Project: MarketSeon API Authentication with NodeJS
+# Project: Portfolio API Authentication with NodeJS
 This is an Authentication API using JWT's. Email & Password is used for authentication.
 
 The API based on Node.js, Express, Prisma & Postgres.
