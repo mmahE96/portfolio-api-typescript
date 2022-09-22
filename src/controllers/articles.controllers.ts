@@ -33,7 +33,7 @@ const getAllArticles: RequestHandler = async (req, res) => {
   }
 };
 
-const createCategory : RequestHandler = async (req, res) => {
+const createCategory: RequestHandler = async (req, res) => {
   const { name } = req.body as any;
 
   try {
@@ -49,16 +49,14 @@ const createCategory : RequestHandler = async (req, res) => {
   }
 };
 
-
-/*
-
 const getArticleById: RequestHandler = async (req, res) => {
   const { id } = req.params as any;
+  const articleId = parseInt(id);
 
   try {
     const article = await prisma.article.findUnique({
       where: {
-        id: Number(id),
+        articleId: articleId,
       },
     });
     res.status(200).json(article);
@@ -69,13 +67,14 @@ const getArticleById: RequestHandler = async (req, res) => {
 
 const updateArticle: RequestHandler = async (req, res) => {
   const { id } = req.params;
+  const articleId = parseInt(id);
   const { title, content, author, category, slug, description } =
     req.body as Article;
 
   try {
     const article = await prisma.article.update({
       where: {
-        id: Number(id),
+        articleId: articleId,
       },
       data: {
         title,
@@ -91,13 +90,15 @@ const updateArticle: RequestHandler = async (req, res) => {
   }
 };
 
+
 const deleteArticle: RequestHandler = async (req, res) => {
   const { id } = req.params;
+  const articleId = parseInt(id);
 
   try {
     const article = await prisma.article.delete({
       where: {
-        id: Number(id),
+        articleId:articleId,
       },
     });
     res.status(200).json(article);
@@ -106,13 +107,13 @@ const deleteArticle: RequestHandler = async (req, res) => {
   }
 };
 
-*/
+
 
 export {
   getAllArticles,
-  //getArticleById,
-  //updateArticle,s
-  //deleteArticle,
+  getArticleById,
+  updateArticle,
+  deleteArticle,
   createArticle,
-  createCategory
+  createCategory,
 };

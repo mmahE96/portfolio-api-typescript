@@ -15,7 +15,14 @@ import {
   resetPassword,
 } from "../controllers/user.controllers";
 
-import { createArticle, createCategory } from "../controllers/articles.controllers";
+import {
+  updateArticle,
+  createArticle,
+  createCategory,
+  getAllArticles,
+  getArticleById,
+  deleteArticle,
+} from "../controllers/articles.controllers";
 
 import { Router } from "express";
 const router = Router();
@@ -46,24 +53,23 @@ router.post("/resetpassword/:userId/:token", resetPassword);
 
 //Articles routes
 
-// router.get("/articles", getAllArticles);
+router.get("/getArticles", getAllArticles);
 
-// router.get("/articles/:id", getArticleById);
+router.get("/articles/:id", getArticleById);
 
 router.post("/createArticle", createArticle);
 
 router.post("/createCategory", createCategory);
 
-// router.put("/articles/:id", updateArticle);
+router.put("/articles/:id", updateArticle);
 
-// router.delete("/articles/:id", deleteArticle);
-
-
-
+router.delete("/articles/:id", deleteArticle);
 
 //Page not found handlers
 router.get("*", notFoundError);
 router.post("*", notFoundError);
+router.delete("*", notFoundError);
+router.put("*", notFoundError);
 
 //Custom error handler
 router.use(genericErrorHandler);
