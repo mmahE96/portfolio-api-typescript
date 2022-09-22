@@ -1,8 +1,11 @@
+import { Article } from './article.type';
+
 interface User {
   id: string;
   email: string;
   password: string;
   role: string;
+  articles: Article[];
 }
 
 

@@ -10,6 +10,7 @@ import {
   findUnique,
   pagination,
   updatePassword,
+  findById,
 } from "../services/user.service";
 
 import validator from "email-validator";
@@ -256,6 +257,22 @@ const dashboard: RequestHandler<{ id: string }> = async (req, res) => {
   }
 };
 
+const getUserById: RequestHandler<{ id: string }> = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const user = (await findById(id)) as User;
+
+    if (!user) {
+      return res.status(400).json(userDoesNotExist);
+    }
+
+    return res.status(200).json(user);
+  } catch (error: any) {
+    return res.status(400).json({ error: error.message });
+  }
+};
+
 const paginationResults: RequestHandler<{
   page: string;
   limit: string;
@@ -278,6 +295,7 @@ export {
   forgotPassword,
   resetPassword,
   getAllUsers,
+  getUserById,
   refresh_token,
   dashboard,
   paginationResults,

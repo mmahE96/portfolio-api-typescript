@@ -13,6 +13,7 @@ import {
   changePassword,
   forgotPassword,
   resetPassword,
+  getUserById
 } from "../controllers/user.controllers";
 
 import {
@@ -22,6 +23,7 @@ import {
   getAllArticles,
   getArticleById,
   deleteArticle,
+  getAllCategories
 } from "../controllers/articles.controllers";
 
 import { Router } from "express";
@@ -38,6 +40,8 @@ router.post("/changerole", adminRoute, changeRole);
 router.get("/dashboard/:id", userRoute, dashboard);
 
 router.get("/getallusers", getAllUsers);
+
+router.get("/getuser/:id", getUserById);
 
 router.get("/refreshtoken", refresh_token);
 
@@ -64,6 +68,8 @@ router.post("/createCategory", createCategory);
 router.put("/articles/:id", updateArticle);
 
 router.delete("/articles/:id", deleteArticle);
+
+router.get("/getCategories", getAllCategories);
 
 //Page not found handlers
 router.get("*", notFoundError);

@@ -1,6 +1,5 @@
 import { RequestHandler } from "express";
 import { Article } from "../types/article.type";
-import { PrismaClient } from "@prisma/client";
 import { prisma } from "../services/user.service";
 
 const createArticle: RequestHandler = async (req, res) => {
@@ -28,6 +27,15 @@ const getAllArticles: RequestHandler = async (req, res) => {
   try {
     const articles = await prisma.article.findMany();
     res.status(200).json(articles);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+const getAllCategories: RequestHandler = async (req, res) => {
+  try {
+    const category = await prisma.category.findMany();
+    res.status(200).json(category);
   } catch (error) {
     res.status(500).json(error);
   }
@@ -90,7 +98,6 @@ const updateArticle: RequestHandler = async (req, res) => {
   }
 };
 
-
 const deleteArticle: RequestHandler = async (req, res) => {
   const { id } = req.params;
   const articleId = parseInt(id);
@@ -98,7 +105,7 @@ const deleteArticle: RequestHandler = async (req, res) => {
   try {
     const article = await prisma.article.delete({
       where: {
-        articleId:articleId,
+        articleId: articleId,
       },
     });
     res.status(200).json(article);
@@ -107,8 +114,6 @@ const deleteArticle: RequestHandler = async (req, res) => {
   }
 };
 
-
-
 export {
   getAllArticles,
   getArticleById,
@@ -116,4 +121,5 @@ export {
   deleteArticle,
   createArticle,
   createCategory,
+  getAllCategories,
 };

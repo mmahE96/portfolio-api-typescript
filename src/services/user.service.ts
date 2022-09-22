@@ -1,6 +1,20 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
+async function findById(id: string) {
+  const userId = parseInt(id)
+  try {
+    const user = await prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+    });
+    return user;
+  } catch (error) {
+    return error;
+  }
+}
+
 async function findUnique(email: string) {
   try {
     const user = await prisma.user.findUnique({
@@ -82,4 +96,4 @@ async function pagination(page: any, limit: any) {
   }
 }
 
-export { findUnique, findMany, create, updateRole, updatePassword, pagination, prisma };
+export {findById, findUnique, findMany, create, updateRole, updatePassword, pagination, prisma };
