@@ -11,8 +11,30 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  email    String @unique
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
   password String
-  role    String
+  role     String
+  Articles Article[] @relation("Author")
+}
+
+model Article {
+  articleId   Int       @id @default(autoincrement())
+  title       String    @unique
+  content     String
+  dateCreated DateTime  @default(now())
+  dateUpdated DateTime  @updatedAt
+  description String
+  slug        String    @unique
+  authorId    Int 
+  author      User      @relation("Author", fields: [authorId], references: [id])
+  userId      Int?
+  Category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  Int?
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String
+  Articles Article[]
 }

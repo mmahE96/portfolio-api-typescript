@@ -15,6 +15,8 @@ import {
   resetPassword,
 } from "../controllers/user.controllers";
 
+import { createArticle, createCategory } from "../controllers/articles.controllers";
+
 import { Router } from "express";
 const router = Router();
 
@@ -41,6 +43,23 @@ router.post("/changepassword", changePassword);
 router.post("/forgotpassword", forgotPassword);
 
 router.post("/resetpassword/:userId/:token", resetPassword);
+
+//Articles routes
+
+// router.get("/articles", getAllArticles);
+
+// router.get("/articles/:id", getArticleById);
+
+router.post("/createArticle", createArticle);
+
+router.post("/createCategory", createCategory);
+
+// router.put("/articles/:id", updateArticle);
+
+// router.delete("/articles/:id", deleteArticle);
+
+
+
 
 //Page not found handlers
 router.get("*", notFoundError);

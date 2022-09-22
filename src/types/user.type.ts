@@ -5,6 +5,9 @@ interface User {
   role: string;
 }
 
+
+
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {

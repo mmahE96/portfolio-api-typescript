@@ -82,4 +82,4 @@ async function pagination(page: any, limit: any) {
   }
 }
 
-export { findUnique, findMany, create, updateRole, updatePassword, pagination };
+export { findUnique, findMany, create, updateRole, updatePassword, pagination, prisma };
