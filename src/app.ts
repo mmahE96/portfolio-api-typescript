@@ -3,6 +3,10 @@ import express from "express";
 import routes from "./routes/index";
 import cors from "cors";
 import logger from "./util/logger";
+import {prisma} from "@prisma/client"
+
+
+
 
 require("dotenv").config();
 

@@ -1,4 +1,6 @@
 import { PrismaClient } from '@prisma/client'
+import { Article } from '../types/article.type';
+import { User } from '../types/user.type';
 const prisma = new PrismaClient()
 
 async function findById(id: string) {
@@ -30,7 +32,14 @@ async function findUnique(email: string) {
 
 async function findMany() {
   try {
-    const users = await prisma.user.findMany();
+    const users = await prisma.user.findMany(
+      {
+        include: {
+          articles: true,
+        },
+      }
+      
+    );
     return users;
   } catch (error) {
     return error;
@@ -38,14 +47,17 @@ async function findMany() {
 }
 
 async function create(email: string, password: string, role: string) {
+  
+  
   try {
-    const user = await prisma.user.create({
+    const user: any = await prisma.user.create({
       data: {
         email,
         password,
-        role,
+        role,        
       },
     });
+    console.log(user.articles)
     return user;
   } catch (error) {
     return error;

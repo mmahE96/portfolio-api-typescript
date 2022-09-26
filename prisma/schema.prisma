@@ -15,26 +15,26 @@ model User {
   email    String    @unique
   password String
   role     String
-  articles Article[] @relation("Author")
+  articles Article[]
 }
 
 model Article {
-  articleId   Int       @id @default(autoincrement())
-  title       String    @unique
+  id          Int      @id @default(autoincrement())
+  title       String   @unique
   content     String
-  dateCreated DateTime  @default(now())
-  dateUpdated DateTime  @updatedAt
+  dateCreated DateTime @default(now())
+  dateUpdated DateTime @updatedAt
   description String
-  slug        String    @unique
+  slug        String   @unique
+  author      User     @relation(fields: [authorId], references: [id])
   authorId    Int
-  author      User      @relation("Author", fields: [authorId], references: [id])
-  userId      Int?
-  Category    Category? @relation(fields: [categoryId], references: [id])
-  categoryId  Int?
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  Int
 }
 
 model Category {
-  id       Int       @id @default(autoincrement())
-  name     String
-  articles Article[]
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  description String
+  articles    Article[]
 }

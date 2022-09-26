@@ -17,6 +17,7 @@ import { create, findUnique } from "../services/user.service";
 import PasswordValidator from "password-validator";
 
 import { User } from "../types/user.type";
+import { prisma } from "@prisma/client";
 require("dotenv").config();
 
 const schema = new PasswordValidator();
@@ -85,6 +86,7 @@ const login: RequestHandler = async (req, res) => {
 };
 
 const register: RequestHandler = async (req, res) => {
+
   try {
     const { email, password } = req.body as { email: string; password: string };
 
