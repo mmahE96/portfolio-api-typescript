@@ -12,8 +12,8 @@ The API based on Node.js, Express, Prisma & Postgres.
 
 ```json
 {
-    "email": "boban.ds@gmail.com",
-    "password": "Almir1234!"
+    "email": "bob.ds@gmail.com",
+    "password": "bob12345?"
 }
 ```
 
@@ -23,7 +23,7 @@ The API based on Node.js, Express, Prisma & Postgres.
     "message": "User registered successfully",
     "user": {
         "id": 20,
-        "email": "almir.ds@gmail.com",
+        "email": "bob.ds@gmail.com",
         "password": "$2b$10$7kT3i0JBAtrs4XRDPjjiMen2osSNGSybHDgN61fcMC18yaKnsOfXO",
         "role": "user"
     }
@@ -43,8 +43,8 @@ The API based on Node.js, Express, Prisma & Postgres.
 
 ```json
 {
-    "email": "mahir.cs@hotmail.com",
-    "password": "Mahir123456!"    
+    "email": "joe@hotmail.com",
+    "password": "joe12345?"    
 }
 ```
 
@@ -108,7 +108,7 @@ The API based on Node.js, Express, Prisma & Postgres.
 ```json
 {
     "role":"admin",
-    "email":"samija.ds@gmail.com"
+    "email":"mark.ds@gmail.com"
 }
 ```
 
@@ -139,25 +139,25 @@ The API based on Node.js, Express, Prisma & Postgres.
 [
     {
         "id": 2,
-        "email": "samir.cs@hotmail.com",
+        "email": "mark.dd@hotmail.com",
         "password": "user",
         "role": "user"
     },
     {
         "id": 4,
-        "email": "almir.cs@hotmail.com",
+        "email": "jay.cs@hotmail.com",
         "password": "$2b$10$6PYqoE8V2PaDRA/1N8BhxOkT4/y0Caq3.3YHJiBhnPh6wZP4XufqW",
         "role": "user"
     },
     {
         "id": 3,
-        "email": "kemo.cs@hotmail.com",
+        "email": "rex.cs@hotmail.com",
         "password": "$2b$10$Eub6TY/3YaaKTFFwYEg.yuZEoUL0iP.n52gZCBXwd8zFpe8hHWASq",
         "role": "admin"
     },
     {
         "id": 6,
-        "email": "",
+        "email": "macx.cs@hotmail.com"",
         "password": "$2b$10$5KdLh8fjZtwQsaZoz7D1weVbWR8vpaKno8zfUMpI57f/cWfy5PWFm",
         "role": "user"
     },
@@ -169,49 +169,49 @@ The API based on Node.js, Express, Prisma & Postgres.
     },
     {
         "id": 8,
-        "email": "mahir.cshotmail.com",
+        "email": "dex.cs@hotmail.com",
         "password": "$2b$10$KzM8tiAga8DsgwM3LFjQvO7pUxrBc3NTGYQeDhVsfAPn7IfSl2H9C",
         "role": "user"
     },
     {
         "id": 10,
-        "email": "mahire.cs@hotmail.com",
+        "email": "ray.cs@hotmail.com",
         "password": "$2b$10$8dUPUgp6KCIgco/TJd8aR.b1s6mxtZEhlqb3j80t9deO71B1tzvBS",
         "role": "user"
     },
     {
         "id": 1,
-        "email": "mahir.cs@hotmail.com",
+        "email": "lex.cs@hotmail.com",
         "password": "$2b$10$Qja.X0zoINfJJvtLUwysR.c/HkRiXVCP743BLmgdnVI.4azfUTTAy",
         "role": "admin"
     },
     {
         "id": 11,
-        "email": "amara.ds@gmail.com",
+        "email": "ana.ds@gmail.com",
         "password": "$2b$10$eoVsSQBjFszjsimvVdSiPO9fddbJ0EjLRBIC/0eFbRdqYI/UQQsli",
         "role": "user"
     },
     {
         "id": 16,
-        "email": "adelisa.ds@gmail.com",
+        "email": "zach.ds@gmail.com",
         "password": "$2b$10$eFHG6TBauCnFufdL5HjuSu1Hvpw6vGd2x3KyPs4NdO0pv0GUF0MTO",
         "role": "user"
     },
     {
         "id": 18,
-        "email": "foka.ds@gmail.com",
+        "email": "max.ds@gmail.com",
         "password": "$2b$10$hOgEkul36nsnf3gnxjSfSe.dAouAP/cFEun4QsuntmxkHW7.piwTW",
         "role": "user"
     },
     {
         "id": 20,
-        "email": "almir.ds@gmail.com",
+        "email": "fax.ds@gmail.com",
         "password": "$2b$10$7kT3i0JBAtrs4XRDPjjiMen2osSNGSybHDgN61fcMC18yaKnsOfXO",
         "role": "user"
     },
     {
         "id": 19,
-        "email": "samija.ds@gmail.com",
+        "email": "rendo.ds@gmail.com",
         "password": "$2b$10$NhDX7oSDPxH6M.Y/Y0qg1OjpMipwC5aDUZO5DeiwRYZ93yi.Ea25K",
         "role": "admin"
     }
@@ -260,7 +260,7 @@ The API based on Node.js, Express, Prisma & Postgres.
 
 ```json
 {
-    "email":"almir.ds@gmail.com",
+    "email":"joe.ds@gmail.com",
     "password":"Mahir1234!"
 }
 ```
@@ -284,7 +284,7 @@ The API based on Node.js, Express, Prisma & Postgres.
 
 ```json
 {
-    "email":"mahir.cs@hotmail.com"
+    "email":"joe.cs@hotmail.com"
 }
 ```
 
@@ -323,7 +323,7 @@ The API based on Node.js, Express, Prisma & Postgres.
 [
     {
         "id": 4,
-        "email": "almir.cs@hotmail.com",
+        "email": "joe.cs@hotmail.com",
         "password": "$2b$10$6PYqoE8V2PaDRA/1N8BhxOkT4/y0Caq3.3YHJiBhnPh6wZP4XufqW",
         "role": "user"
     },
@@ -341,13 +341,13 @@ The API based on Node.js, Express, Prisma & Postgres.
     },
     {
         "id": 8,
-        "email": "mahir.cshotmail.com",
+        "email": "max.cshotmail.com",
         "password": "$2b$10$KzM8tiAga8DsgwM3LFjQvO7pUxrBc3NTGYQeDhVsfAPn7IfSl2H9C",
         "role": "user"
     },
     {
         "id": 10,
-        "email": "mahire.cs@hotmail.com",
+        "email": "rex.cs@hotmail.com",
         "password": "$2b$10$8dUPUgp6KCIgco/TJd8aR.b1s6mxtZEhlqb3j80t9deO71B1tzvBS",
         "role": "user"
     }
