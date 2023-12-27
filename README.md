@@ -261,7 +261,7 @@ The API based on Node.js, Express, Prisma & Postgres.
 ```json
 {
     "email":"joe.ds@gmail.com",
-    "password":"Mahir1234!"
+    "password":"bob1234!"
 }
 ```
 
